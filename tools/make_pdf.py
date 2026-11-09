@@ -71,9 +71,10 @@ S_QUOTE = style("quote", fontSize=9.5, leading=13.4, leftIndent=16, rightIndent=
                 spaceBefore=8, spaceAfter=8)
 S_TOC_H = style("toc_h", fontName="Times-Bold", fontSize=17, leading=22,
                 alignment=TA_CENTER, spaceAfter=20)
-S_TABLE = style("table", fontSize=8.5, leading=11, alignment=TA_LEFT)
+S_TABLE = style("table", fontSize=8.5, leading=11, alignment=TA_LEFT,
+                hyphenationLang=None)
 S_TABLE_B = style("table_b", fontName="Times-Bold", fontSize=8.5, leading=11,
-                  alignment=TA_LEFT)
+                  alignment=TA_LEFT, hyphenationLang=None)
 S_CAP = style("cap", fontName="Times-Italic", fontSize=8.6, leading=12,
               alignment=TA_CENTER, spaceBefore=4, spaceAfter=10, textColor=GREY)
 S_BIB = style("bib", fontSize=9.6, leading=13.2, leftIndent=15, firstLineIndent=-15,
@@ -263,8 +264,24 @@ def parse_table(rows):
     for r in data:
         while len(r) < ncol:
             r.append(Paragraph("", S_TABLE))
-    col_w = FRAME_W / ncol
-    t = Table(data, colWidths=[col_w] * ncol, repeatRows=1, hAlign="LEFT")
+    # column widths: never narrower than the longest single word, then share the rest
+    plain = [[re.sub(r"[*`]", "", c) for c in r] for r in cells]
+    need = []
+    want = []
+    for j in range(ncol):
+        cells_j = [r[j] for r in plain if j < len(r)]
+        longest_word = max((stringWidth(w, "Times-Roman", 8.3)
+                            for c in cells_j for w in c.split()), default=12)
+        need.append(longest_word + 10)
+        want.append(max(len(c) for c in cells_j) if cells_j else 8)
+    base = sum(need)
+    if base >= FRAME_W:
+        col_w = [FRAME_W / ncol] * ncol
+    else:
+        spare = FRAME_W - base
+        tw = sum(want) or 1
+        col_w = [need[j] + spare * want[j] / tw for j in range(ncol)]
+    t = Table(data, colWidths=col_w, repeatRows=1, hAlign="LEFT")
     t.setStyle(TableStyle([
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
         ("TOPPADDING", (0, 0), (-1, -1), 3),
@@ -341,11 +358,11 @@ def word_number(n: int) -> str:
 # ------------------------------------------------------------------ document
 
 class Book(BaseDocTemplate):
-    def __init__(self, filename, **kw):
+    def __init__(self, filename, doc_title="Artificial Intelligence and Robotics", **kw):
         BaseDocTemplate.__init__(self, filename, pagesize=(PAGE_W, PAGE_H),
                                  leftMargin=M_IN, rightMargin=M_OUT,
                                  topMargin=M_TOP, bottomMargin=M_BOT,
-                                 title="Artificial Intelligence and Robotics: Volume One",
+                                 title=doc_title,
                                  author="TBUGE Mechatronix", subject="Artificial intelligence and robotics: a complete course in plain English", creator="TBUGE Mechatronix typesetting pipeline", **kw)
         frame_body = Frame(M_IN, M_BOT, FRAME_W, FRAME_H, id="body",
                            leftPadding=0, rightPadding=0, topPadding=0, bottomPadding=0)
@@ -432,16 +449,52 @@ class Book(BaseDocTemplate):
 
 # ------------------------------------------------------------------ build
 
+SMALL_WORDS = {"to", "and", "of", "the", "in", "on", "for", "with", "a", "an"}
+
+
+def title_slug(text: str) -> str:
+    words = re.findall(r"[A-Za-z0-9]+", text)
+    out = []
+    for i, w in enumerate(words):
+        lw = w.lower()
+        if i and lw in SMALL_WORDS:
+            out.append(lw)
+        else:
+            out.append(lw.capitalize())
+    return "-".join(out)
+
+
+def volume_identity(src: Path):
+    """Read the series title, volume numeral and volume title from the title page."""
+    text = (src / "01-title-page.md").read_text(encoding="utf-8")
+    h1s, numeral = [], "One"
+    for line in text.splitlines():
+        s = line.strip()
+        if s.startswith("# "):
+            h1s.append(s[2:].strip())
+        if s.lower().startswith("## volume"):
+            numeral = s.split("Volume", 1)[1].strip() or numeral
+    title = h1s[1] if len(h1s) > 1 else (h1s[0] if h1s else "Volume")
+    try:
+        number = NUMBER_WORDS.index(numeral.capitalize()) + 1
+    except ValueError:
+        number = 1
+    return number, title, title_slug(title)
+
+
 def build(volume_dir: Path):
     src = volume_dir / "src"
     out = volume_dir / "out"
     out.mkdir(parents=True, exist_ok=True)
+    number, volume_title, slug = volume_identity(src)
 
     def md(name):
         p = src / name
         return p.read_text(encoding="utf-8") if p.exists() else ""
 
-    doc = Book(str(out / "AI-and-Robotics-Volume-1-Introduction-to-Artificial-Intelligence.pdf"))
+    pdf_path = out / f"AI-and-Robotics-Volume-{number}-{slug}.pdf"
+    doc = Book(str(pdf_path),
+               doc_title=f"Artificial Intelligence and Robotics: Volume {number}, {volume_title}")
     story = []
 
     # ---- half title
@@ -586,7 +639,7 @@ def build(volume_dir: Path):
                 story += [Paragraph(safe(payload), S_BULLET, bulletText="\u2022")]
 
     doc.multiBuild(story)
-    return out / "AI-and-Robotics-Volume-1-Introduction-to-Artificial-Intelligence.pdf"
+    return pdf_path
 
 
 if __name__ == "__main__":
