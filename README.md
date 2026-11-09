@@ -45,10 +45,26 @@ python3 tools/booktool.py build             # stitch the whole book into one Mar
 |---|---|
 | Courses outlined | 48 / 48 |
 | Chapters outlined | 480 / 480 |
-| Courses written | 1 / 48 — Course 1, Introduction to Artificial Intelligence (20,083 words, PASS) |
-| Book written | about 2.1% |
+| Courses written | 1 / 48 — Course 1, Introduction to Artificial Intelligence (24,400 words, PASS) |
+| Volumes published as PDF | 1 / 48 — Volume One, 86 pages |
+| Book written | about 2.5% |
 
 Course 1 is the **pilot**: it is complete, it passes the word-count gate, and it sets the voice and the shape that the other 47 courses follow. The remaining courses are written one folder at a time, in syllabus order, using `book/02-how-to-write-this-book.md`.
+
+## Published volumes
+
+| Volume | Title | Pages | Words | File |
+|---|---|---|---|---|
+| I | Introduction to Artificial Intelligence | 86 | 24,400 | `book/volumes/volume-01/out/AI-and-Robotics-Volume-1-Introduction-to-Artificial-Intelligence.pdf` |
+
+Each volume is written as continuous book prose (not a templated chapter grid) and typeset to 6 × 9 inches with running heads, contents, part dividers, glossary and sources.
+
+Build a volume's PDF:
+
+```bash
+pip install --break-system-packages reportlab pyphen pypdfium2 pillow
+python3 tools/make_pdf.py book/volumes/volume-01
+```
 
 ## Writing order
 
