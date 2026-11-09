@@ -510,9 +510,9 @@ def build(volume_dir: Path):
               Spacer(1, 26),
               Rule(width=90, color=RULE, space=8),
               Spacer(1, 26),
-              Paragraph("Volume One", S_VOL),
+              Paragraph(f"Volume {NUMBER_WORDS[number - 1]}", S_VOL),
               Spacer(1, 8),
-              Paragraph("Introduction to Artificial Intelligence", S_SUBTITLE),
+              Paragraph(volume_title, S_SUBTITLE),
               Spacer(1, 150),
               Paragraph("TBUGE MECHATRONIX", S_VOL),
               PageBreak()]
