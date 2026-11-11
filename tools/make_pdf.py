@@ -26,7 +26,7 @@ from reportlab.lib.units import mm
 from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.platypus import (BaseDocTemplate, Flowable, Frame, KeepTogether,
                                 NextPageTemplate, PageBreak, PageTemplate,
-                                Paragraph, Spacer, Table, TableStyle)
+                                Paragraph, Preformatted, Spacer, Table, TableStyle)
 from reportlab.platypus.tableofcontents import TableOfContents
 
 # ------------------------------------------------------------------ geometry
@@ -66,6 +66,8 @@ S_H2 = style("h2", fontName="Times-Bold", fontSize=12.4, leading=15, spaceBefore
              spaceAfter=5, alignment=TA_LEFT, keepWithNext=1)
 S_H3 = style("h3", fontName="Times-Italic", fontSize=11, leading=14, spaceBefore=11,
              spaceAfter=3, alignment=TA_LEFT, keepWithNext=1)
+S_PRE = style("pre", fontName="Courier", fontSize=8.4, leading=11.2,
+             leftIndent=14, spaceBefore=0, spaceAfter=0, textColor=colors.HexColor("#1a1a1a"))
 S_QUOTE = style("quote", fontSize=9.5, leading=13.4, leftIndent=16, rightIndent=12,
                 alignment=TA_JUSTIFY, textColor=colors.HexColor("#222222"),
                 spaceBefore=8, spaceAfter=8)
@@ -314,6 +316,14 @@ def parse_markdown(text: str):
             blocks.append(("h3", line[4:].strip())); i += 1; continue
         if line in ("---", "***"):
             blocks.append(("break", "")); i += 1; continue
+        if raw.startswith("    ") and line:
+            pre = []
+            while i < len(lines) and (lines[i].strip() == "" or lines[i].startswith("    ")):
+                pre.append(lines[i][4:].rstrip())
+                i += 1
+            while pre and pre[-1] == "":
+                pre.pop()
+            blocks.append(("pre", "\n".join(pre))); continue
         if line.startswith("|"):
             rows = []
             while i < len(lines) and lines[i].strip().startswith("|"):
@@ -328,18 +338,18 @@ def parse_markdown(text: str):
         if m:
             num, first = m.group(1), m.group(2)
             body = [first]; i += 1
-            while i < len(lines) and lines[i].strip() and not re.match(
+            while i < len(lines) and lines[i].strip() and not lines[i].startswith("    ") and not re.match(
                     r"^(#|>|\||-\s|\d+\.\s|---)", lines[i].strip()):
                 body.append(lines[i].strip()); i += 1
             blocks.append(("num", (num, " ".join(body)))); continue
         if re.match(r"^[-*]\s+", line):
             body = [line[2:].strip()]; i += 1
-            while i < len(lines) and lines[i].strip() and not re.match(
+            while i < len(lines) and lines[i].strip() and not lines[i].startswith("    ") and not re.match(
                     r"^(#|>|\||-\s|\d+\.\s|---)", lines[i].strip()):
                 body.append(lines[i].strip()); i += 1
             blocks.append(("bullet", " ".join(body))); continue
         para = [line]; i += 1
-        while i < len(lines) and lines[i].strip() and not re.match(
+        while i < len(lines) and lines[i].strip() and not lines[i].startswith("    ") and not re.match(
                 r"^(#|>|\||-\s|\d+\.\s|---)", lines[i].strip()):
             para.append(lines[i].strip()); i += 1
         blocks.append(("p", " ".join(para)))
@@ -607,6 +617,8 @@ def build(volume_dir: Path):
                 first_body = False
             elif kind2 == "quote":
                 story += [Spacer(1, 2), Paragraph(safe(payload), S_QUOTE)]
+            elif kind2 == "pre":
+                story += [Spacer(1, 4), Preformatted(payload, S_PRE), Spacer(1, 6)]
             elif kind2 == "bullet":
                 story += [Paragraph(safe(payload), S_BULLET, bulletText="\u2022")]
             elif kind2 == "num":

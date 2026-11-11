@@ -45,10 +45,10 @@ python3 tools/booktool.py build             # stitch the whole book into one Mar
 |---|---|
 | Courses outlined | 48 / 48 |
 | Chapters outlined | 480 / 480 |
-| Courses written | 3 / 48 — Introduction to Artificial Intelligence; Robotics Fundamentals; Machine Learning |
-| Volumes published as PDF | 3 / 48 — Volume One (86 pages), Volume Two (84 pages), Volume Three (81 pages) |
-| Words written | 67,000 |
-| Book written | about 6.3% |
+| Courses written | 4 / 48 — Introduction to Artificial Intelligence; Robotics Fundamentals; Machine Learning; Computer Vision |
+| Volumes published as PDF | 4 / 48 — Volume One (86 pages), Volume Two (84 pages), Volume Three (81 pages), Volume Four (86 pages) |
+| Words written | 89,000 |
+| Book written | about 8.3% |
 
 Course 1 is the **pilot**: it is complete, it passes the word-count gate, and it sets the voice and the shape that the other 47 courses follow. The remaining courses are written one folder at a time, in syllabus order, using `book/02-how-to-write-this-book.md`.
 
@@ -59,6 +59,7 @@ Course 1 is the **pilot**: it is complete, it passes the word-count gate, and it
 | I | Introduction to Artificial Intelligence | 86 | 24,400 | `book/volumes/volume-01/out/AI-and-Robotics-Volume-1-Introduction-to-Artificial-Intelligence.pdf` |
 | II | Robotics Fundamentals | 84 | 22,600 | `book/volumes/volume-02/out/AI-and-Robotics-Volume-2-Robotics-Fundamentals.pdf` |
 | III | Machine Learning | 81 | 20,000 | `book/volumes/volume-03/out/AI-and-Robotics-Volume-3-Machine-Learning.pdf` |
+| IV | Computer Vision | 86 | 22,200 | `book/volumes/volume-04/out/AI-and-Robotics-Volume-4-Computer-Vision.pdf` |
 
 Each volume is written as continuous book prose (not a templated chapter grid) and typeset to 6 × 9 inches with running heads, contents, part dividers, glossary and sources.
 
@@ -69,6 +70,7 @@ pip install --break-system-packages reportlab pyphen pypdfium2 pillow
 python3 tools/make_pdf.py book/volumes/volume-01
 python3 tools/make_pdf.py book/volumes/volume-02
 python3 tools/make_pdf.py book/volumes/volume-03
+python3 tools/make_pdf.py book/volumes/volume-04
 ```
 
 ## Writing order
