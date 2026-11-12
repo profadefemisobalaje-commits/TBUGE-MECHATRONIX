@@ -253,6 +253,20 @@ class Rule(Flowable):
 
 # ------------------------------------------------------------------ parsing
 
+class BookTable(Table):
+    """A table that will not leave a header and one lonely row at a page foot."""
+
+    def split(self, availWidth, availHeight):
+        parts = Table.split(self, availWidth, availHeight)
+        if not parts:
+            return parts
+        head, tail = parts
+        rows = len(getattr(head, "_cellvalues", []) or [])
+        if tail and rows < 3 and len(self._cellvalues) <= 12:
+            return []
+        return parts
+
+
 def parse_table(rows):
     cells = [[c.strip() for c in r.strip().strip("|").split("|")] for r in rows]
     cells = [r for r in cells if not all(re.fullmatch(r":?-{2,}:?", c) for c in r)]
@@ -283,7 +297,7 @@ def parse_table(rows):
         spare = FRAME_W - base
         tw = sum(want) or 1
         col_w = [need[j] + spare * want[j] / tw for j in range(ncol)]
-    t = Table(data, colWidths=col_w, repeatRows=1, hAlign="LEFT")
+    t = BookTable(data, colWidths=col_w, repeatRows=1, hAlign="LEFT")
     t.setStyle(TableStyle([
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
         ("TOPPADDING", (0, 0), (-1, -1), 3),
