@@ -1,0 +1,877 @@
+{
+  "book": {
+    "title": "Artificial Intelligence and Robotics",
+    "subtitle": "A Complete Four-Year Course in Plain English",
+    "publisher": "TBUGE Mechatronix",
+    "edition": "First Edition",
+    "target_words_per_course": 20000,
+    "chapters_per_course": 10,
+    "target_words_per_chapter": 1800
+  },
+  "years": [
+    {
+      "year": "Year 1",
+      "semester": "Semester 1",
+      "courses": [
+        {
+          "number": 1,
+          "title": "Introduction to Artificial Intelligence",
+          "promise": "Understand what AI is really doing, and build your first small intelligent program.",
+          "chapters": [
+            "What Intelligence Means in Machines",
+            "A Short History of Thinking Machines",
+            "Agents: The Core Idea of AI",
+            "Searching for Solutions",
+            "Knowledge, Rules and Reasoning",
+            "Learning from Data: A First Look",
+            "Uncertainty and Probability",
+            "Language, Vision and Sound: A First Look",
+            "AI Systems in the Real World",
+            "Limits, Risks and the Road Ahead"
+          ]
+        },
+        {
+          "number": 2,
+          "title": "Robotics Fundamentals",
+          "promise": "Know every main part of a robot and how those parts work together.",
+          "chapters": [
+            "What a Robot Is",
+            "The Parts of a Robot",
+            "Joints, Links and Degrees of Freedom",
+            "Actuators and Motors",
+            "Sensors and Signals",
+            "Power, Wiring and Electronics",
+            "Simple Robot Behaviour",
+            "Safety and Failure",
+            "Building and Testing Your First Robot",
+            "Robots in Industry and Daily Life"
+          ]
+        },
+        {
+          "number": 3,
+          "title": "Machine Learning",
+          "promise": "Train models that predict, classify and generalise, and know when to distrust them.",
+          "chapters": [
+            "Learning from Examples",
+            "Data: Collecting, Cleaning and Splitting",
+            "Measuring How Wrong a Model Is",
+            "Linear Models for Prediction",
+            "Classification and Decision Boundaries",
+            "Overfitting and Regularisation",
+            "Trees, Forests and Nearest Neighbours",
+            "Model Evaluation and Cross-Validation",
+            "Features and Pipelines",
+            "Deploying and Maintaining Models"
+          ]
+        },
+        {
+          "number": 4,
+          "title": "Computer Vision",
+          "promise": "Turn pixel numbers into useful information about objects, motion and depth.",
+          "chapters": [
+            "How Machines See",
+            "Images as Numbers",
+            "Filtering and Convolution",
+            "Edges, Corners and Features",
+            "Segmentation: Separating What Is in the Picture",
+            "Object Detection",
+            "Tracking Across Frames",
+            "Depth and 3D Vision",
+            "Recognition with Learned Features",
+            "Building a Vision Application"
+          ]
+        },
+        {
+          "number": 5,
+          "title": "Natural Language Processing",
+          "promise": "Make software that reads, understands and writes human language.",
+          "chapters": [
+            "Language as Data",
+            "Cleaning Text and Splitting It into Tokens",
+            "Words as Vectors",
+            "Language Models",
+            "Classifying Text",
+            "Extracting Information from Text",
+            "Machine Translation",
+            "Question Answering and Chat",
+            "Speech Interfaces",
+            "Evaluation, Bias and Safety in Language Systems"
+          ]
+        },
+        {
+          "number": 6,
+          "title": "Control Systems",
+          "promise": "Keep a real system on target using feedback, from a motor to a drone.",
+          "chapters": [
+            "What Control Means",
+            "Modelling a System",
+            "Open Loop and Closed Loop",
+            "Sensors, Actuators and Error",
+            "PID Control",
+            "Stability",
+            "Frequency Response",
+            "State Space Models",
+            "Digital Control",
+            "Control in Robots and Tuning Practice"
+          ]
+        }
+      ]
+    },
+    {
+      "year": "Year 1",
+      "semester": "Semester 2",
+      "courses": [
+        {
+          "number": 7,
+          "title": "Data Structures and Algorithms",
+          "promise": "Choose the right way to store and process data, and know the cost of each choice.",
+          "chapters": [
+            "Why Structure Matters",
+            "Arrays, Lists and Strings",
+            "Stacks and Queues",
+            "Hash Tables",
+            "Trees",
+            "Heaps and Priority Queues",
+            "Graphs",
+            "Sorting and Searching",
+            "Algorithm Complexity",
+            "Design Patterns for Robot Software"
+          ]
+        },
+        {
+          "number": 8,
+          "title": "Digital Signal Processing",
+          "promise": "Clean, measure and interpret the sensor and audio signals a robot lives on.",
+          "chapters": [
+            "Signals in the Real World",
+            "Sampling and Quantisation",
+            "The Frequency View",
+            "The Fourier Transform",
+            "Filters",
+            "Convolution and Correlation",
+            "Noise and Smoothing Sensor Data",
+            "Designing Digital Filters",
+            "Image and Audio Signals",
+            "Real-Time Signal Processing for Robots"
+          ]
+        },
+        {
+          "number": 9,
+          "title": "Embedded Systems",
+          "promise": "Program the small computers inside machines, where timing and memory are tight.",
+          "chapters": [
+            "What an Embedded System Is",
+            "Microcontrollers and Their Pins",
+            "Reading Sensors",
+            "Driving Actuators",
+            "Timers, Interrupts and Real Time",
+            "Communication Buses",
+            "Memory, Power and Reliability",
+            "Real-Time Operating Systems",
+            "Testing Embedded Code",
+            "From Prototype to Product"
+          ]
+        },
+        {
+          "number": 10,
+          "title": "Human-Robot Interaction",
+          "promise": "Design robot behaviour that people understand, trust and want to use.",
+          "chapters": [
+            "People Meeting Machines",
+            "Studying How People Use Robots",
+            "Communication Channels",
+            "Social Signals and Expression",
+            "Voice and Speech Interaction",
+            "Trust, Comfort and Anthropomorphism",
+            "Teleoperation and Shared Control",
+            "Designing an Interaction",
+            "Evaluating an Interaction",
+            "Field Studies and the Ethics of Use"
+          ]
+        },
+        {
+          "number": 11,
+          "title": "Neural Networks",
+          "promise": "Build and train networks from a single artificial neuron to a working deep model.",
+          "chapters": [
+            "From Neurons to Equations",
+            "The Perceptron",
+            "Layers and Activation Functions",
+            "Training by Gradient Descent",
+            "Backpropagation",
+            "Making Training Work",
+            "Regularisation and Dropout",
+            "Convolutional Networks",
+            "Recurrent and Sequence Networks",
+            "From Network to System"
+          ]
+        },
+        {
+          "number": 12,
+          "title": "Computer Graphics",
+          "promise": "Draw, light and animate 3D worlds on a screen, and use them to see inside a robot.",
+          "chapters": [
+            "The Graphics Pipeline",
+            "Points, Vectors and Transforms",
+            "Modelling 3D Objects",
+            "Cameras and Projection",
+            "Lighting and Shading",
+            "Textures and Materials",
+            "Rendering Techniques",
+            "Animation",
+            "Real-Time Graphics and the GPU",
+            "Graphics for Robot Simulation and Visualisation"
+          ]
+        }
+      ]
+    },
+    {
+      "year": "Year 2",
+      "semester": "Semester 1",
+      "courses": [
+        {
+          "number": 13,
+          "title": "Internet of Things",
+          "promise": "Connect many small devices into systems that sense, report and act together.",
+          "chapters": [
+            "What the Internet of Things Is",
+            "Devices, Sensors and Nodes",
+            "Networks for Small Devices",
+            "Protocols: MQTT, CoAP and REST",
+            "Edge, Fog and Cloud",
+            "Data Pipelines",
+            "Time, Synchronisation and Reliability",
+            "Security and Privacy",
+            "Dashboards and Applications",
+            "The Internet of Things for Robots"
+          ]
+        },
+        {
+          "number": 14,
+          "title": "Robotic Perception",
+          "promise": "Turn noisy sensor data into a reliable picture of the world around a robot.",
+          "chapters": [
+            "Perception as Inference",
+            "Sensor Models and Uncertainty",
+            "Camera Geometry",
+            "Lidar and Depth Sensing",
+            "Fusing Sensors",
+            "Detecting and Classifying Objects",
+            "Mapping the Environment",
+            "Tracking Moving Things",
+            "Perception for Manipulation",
+            "Building and Testing a Perception Stack"
+          ]
+        },
+        {
+          "number": 15,
+          "title": "Ethics in AI and Robotics",
+          "promise": "Recognise ethical problems early and handle them with clear, defensible reasoning.",
+          "chapters": [
+            "Why Ethics Comes First",
+            "Moral Frameworks in Plain Language",
+            "Bias and Fairness",
+            "Privacy and Data",
+            "Accountability and Responsibility",
+            "Transparency and Explainability",
+            "Safety and Risk",
+            "Autonomy and Human Control",
+            "Regulation and Standards",
+            "Applying Ethics in Practice"
+          ]
+        },
+        {
+          "number": 16,
+          "title": "Autonomous Systems",
+          "promise": "Understand how a machine senses, decides and acts with little or no human help.",
+          "chapters": [
+            "What Makes a System Autonomous",
+            "Levels of Autonomy",
+            "Sensing the World",
+            "Deciding What to Do",
+            "Planning and Acting",
+            "Navigation and Localisation",
+            "Safety Architectures",
+            "Human Oversight",
+            "Testing Autonomous Systems",
+            "Case Studies: Cars, Drones and Robots"
+          ]
+        },
+        {
+          "number": 17,
+          "title": "Reinforcement Learning",
+          "promise": "Train agents that improve by trying, failing and being rewarded.",
+          "chapters": [
+            "Learning by Trial and Error",
+            "Rewards and Returns",
+            "Markov Decision Processes",
+            "Dynamic Programming",
+            "Monte Carlo Methods",
+            "Temporal Difference Learning",
+            "Q-Learning and SARSA",
+            "Policy Gradients",
+            "Deep Reinforcement Learning",
+            "Practical Training and Pitfalls"
+          ]
+        },
+        {
+          "number": 18,
+          "title": "Computer Architecture",
+          "promise": "Know how processors, memory and buses work, and why it decides what AI can run.",
+          "chapters": [
+            "Inside a Computer",
+            "Numbers, Bits and Data Representation",
+            "The Processor and the Instruction Cycle",
+            "Pipelining",
+            "Memory Hierarchy and Caches",
+            "Input, Output and Buses",
+            "Instruction Sets",
+            "Parallelism and Multi-Core Computing",
+            "Accelerators for AI",
+            "Architecture Choices for Robots"
+          ]
+        }
+      ]
+    },
+    {
+      "year": "Year 2",
+      "semester": "Semester 2",
+      "courses": [
+        {
+          "number": 19,
+          "title": "Mobile Robotics",
+          "promise": "Make a wheeled or legged robot move, know where it is and go where you ask.",
+          "chapters": [
+            "Robots That Move",
+            "Wheels, Tracks and Legs",
+            "Kinematic Models of Mobile Robots",
+            "Odometry and Dead Reckoning",
+            "Sensors for Mobile Robots",
+            "Localisation",
+            "Mapping",
+            "Path Planning and Path Following",
+            "Obstacle Avoidance and Behaviour",
+            "Field Deployment"
+          ]
+        },
+        {
+          "number": 20,
+          "title": "AI for Robotics",
+          "promise": "Apply AI methods to the hard problem of acting correctly in the physical world.",
+          "chapters": [
+            "Where AI Meets the Physical World",
+            "Representing the Robot's World",
+            "Planning with AI",
+            "Learning for Control",
+            "Perception Meets Decision Making",
+            "Task and Motion Planning",
+            "Learning from Demonstration",
+            "Foundation Models for Robots",
+            "Integration Architectures",
+            "Evaluating AI on Real Robots"
+          ]
+        },
+        {
+          "number": 21,
+          "title": "Fuzzy Logic",
+          "promise": "Reason with degrees of truth instead of hard yes-or-no answers.",
+          "chapters": [
+            "Beyond True and False",
+            "Fuzzy Sets",
+            "Membership Functions",
+            "Fuzzy Rules",
+            "Inference",
+            "Defuzzification",
+            "Designing a Fuzzy Controller",
+            "Tuning and Testing",
+            "Fuzzy Logic with Other AI Tools",
+            "Case Studies in Machines"
+          ]
+        },
+        {
+          "number": 22,
+          "title": "Deep Learning",
+          "promise": "Understand and train modern deep models, including transformers, and deploy them.",
+          "chapters": [
+            "Why Depth Helps",
+            "Data and Compute",
+            "Training Deep Networks",
+            "Convolutional Architectures",
+            "Sequence Models",
+            "Attention and Transformers",
+            "Generative Models",
+            "Transfer Learning",
+            "Model Compression and Deployment",
+            "Deep Learning Projects"
+          ]
+        },
+        {
+          "number": 23,
+          "title": "Pattern Recognition",
+          "promise": "Find structure in data and decide which class a new sample belongs to.",
+          "chapters": [
+            "Finding Patterns",
+            "Features and Representations",
+            "Statistical Decision Theory",
+            "Bayesian Classification",
+            "Discriminant Functions",
+            "Clustering",
+            "Dimensionality Reduction",
+            "Patterns in Time and Sequences",
+            "Evaluation and Error Analysis",
+            "Pattern Recognition in Robotics"
+          ]
+        },
+        {
+          "number": 24,
+          "title": "Robot Kinematics",
+          "promise": "Compute exactly where a robot's arm or body will be, and how to reach a pose.",
+          "chapters": [
+            "Describing Position and Orientation",
+            "Rotation Matrices and Quaternions",
+            "Frames and Transforms",
+            "Forward Kinematics",
+            "Inverse Kinematics",
+            "Velocity and Jacobians",
+            "Singularities",
+            "Workspace and Reachability",
+            "Kinematics for Mobile and Parallel Robots",
+            "Kinematics in Practice"
+          ]
+        }
+      ]
+    },
+    {
+      "year": "Year 3",
+      "semester": "Semester 1",
+      "courses": [
+        {
+          "number": 25,
+          "title": "Virtual Reality",
+          "promise": "Build immersive 3D experiences, and use them for robot training and control.",
+          "chapters": [
+            "What Virtual Reality Is",
+            "Human Senses and Perception",
+            "Displays, Lenses and Optics",
+            "Tracking",
+            "Interaction and Controllers",
+            "3D Content and Engines",
+            "Immersion and Comfort",
+            "Building a Virtual Reality Application",
+            "Virtual Reality for Robot Teleoperation and Training",
+            "Testing and Ethics in Virtual Reality"
+          ]
+        },
+        {
+          "number": 26,
+          "title": "Cyber-Physical Systems",
+          "promise": "Design systems where software and physical processes are tightly joined.",
+          "chapters": [
+            "The Physical and the Digital",
+            "Modelling Physical Processes",
+            "Sensing and Actuation Loops",
+            "Networking and Time",
+            "Embedded Computing in Cyber-Physical Systems",
+            "Verification and Validation",
+            "Security of Cyber-Physical Systems",
+            "Reliability and Fault Tolerance",
+            "Smart Grids, Factories and Cities",
+            "Robots as Cyber-Physical Systems"
+          ]
+        },
+        {
+          "number": 27,
+          "title": "Swarm Robotics",
+          "promise": "Get simple robots to achieve complex group behaviour with local rules.",
+          "chapters": [
+            "Many Simple Robots",
+            "Emergence and Self-Organisation",
+            "Local Rules and Global Behaviour",
+            "Communication in Swarms",
+            "Aggregation and Clustering",
+            "Foraging and Task Allocation",
+            "Formation and Flocking",
+            "Scalability and Robustness",
+            "Simulating Swarms",
+            "Real Swarm Robots and Applications"
+          ]
+        },
+        {
+          "number": 28,
+          "title": "Robot Operating Systems",
+          "promise": "Build a complete robot software system with nodes, topics, transforms and simulation.",
+          "chapters": [
+            "Why Robots Need Middleware",
+            "Nodes, Topics and Messages",
+            "Services and Actions",
+            "Packages and Workspaces",
+            "Launch Files and Parameters",
+            "Transforms and Time",
+            "Simulation",
+            "Visualisation and Debugging Tools",
+            "Building a Complete Robot Stack",
+            "Best Practices and Real Deployments"
+          ]
+        },
+        {
+          "number": 29,
+          "title": "Cognitive Robotics",
+          "promise": "Give robots knowledge, memory and reasoning that resemble human thinking.",
+          "chapters": [
+            "Machines That Know",
+            "Representing Knowledge",
+            "Reasoning and Planning as Thinking",
+            "Memory and Learning",
+            "Attention and Perception",
+            "Development and Embodiment",
+            "Language and Thought in Robots",
+            "Models of Human Cognition",
+            "Cognitive Architectures",
+            "Testing Cognitive Claims"
+          ]
+        },
+        {
+          "number": 30,
+          "title": "Biologically Inspired Robotics",
+          "promise": "Copy the best ideas from animals and plants to build better machines.",
+          "chapters": [
+            "Learning from Nature",
+            "Animal Movement and Locomotion",
+            "Legs, Fins and Wings",
+            "Muscles, Springs and Compliance",
+            "Sensing Like Animals",
+            "Neural Inspiration",
+            "Swarms, Colonies and Flocks",
+            "Soft Robotics",
+            "Bio-Inspired Control",
+            "Building and Evaluating Bio-Inspired Robots"
+          ]
+        }
+      ]
+    },
+    {
+      "year": "Year 3",
+      "semester": "Semester 2",
+      "courses": [
+        {
+          "number": 31,
+          "title": "Machine Vision",
+          "promise": "Build industrial vision systems that measure, inspect and guide machines.",
+          "chapters": [
+            "Industrial Vision Systems",
+            "Cameras, Lenses and Lighting",
+            "Calibration",
+            "Measurement and Inspection",
+            "Defect Detection",
+            "Code Reading and Alignment",
+            "Vision-Guided Motion",
+            "Speed, Repeatability and Accuracy",
+            "Integration on the Factory Floor",
+            "Case Studies and Maintenance"
+          ]
+        },
+        {
+          "number": 32,
+          "title": "Intelligent Control Systems",
+          "promise": "Combine control theory with learning, rules and optimisation to handle hard plants.",
+          "chapters": [
+            "From Control to Intelligent Control",
+            "Expert and Rule-Based Control",
+            "Fuzzy Control Systems",
+            "Neural Control",
+            "Learning-Based Control",
+            "Adaptive and Robust Control",
+            "Hierarchical and Hybrid Control",
+            "Optimisation-Based Control",
+            "Intelligent Control in Robots",
+            "Choosing and Validating a Controller"
+          ]
+        },
+        {
+          "number": 33,
+          "title": "Multi-Robot Systems",
+          "promise": "Coordinate several robots so they finish one task as a team.",
+          "chapters": [
+            "Several Robots, One Task",
+            "Coordination Basics",
+            "Communication Topologies",
+            "Task Allocation",
+            "Formation Control",
+            "Consensus and Distributed Decisions",
+            "Path Coordination and Collision Avoidance",
+            "Centralised versus Distributed",
+            "Simulation and Experimentation",
+            "Applications and Open Problems"
+          ]
+        },
+        {
+          "number": 34,
+          "title": "Robot Localisation and Mapping",
+          "promise": "Solve the chicken-and-egg problem of knowing where you are while drawing the map.",
+          "chapters": [
+            "The Chicken-and-Egg Problem",
+            "Probability for Localisation",
+            "Odometry and Motion Models",
+            "Range Sensing and Landmarks",
+            "Kalman and Particle Filters",
+            "Mapping with Known Poses",
+            "Simultaneous Localisation and Mapping",
+            "Loop Closure",
+            "Map Representations",
+            "Practical Localisation and Mapping Systems"
+          ]
+        },
+        {
+          "number": 35,
+          "title": "Robotics Planning",
+          "promise": "Turn a goal into a safe, feasible sequence of robot actions.",
+          "chapters": [
+            "What Planning Means for Robots",
+            "State Spaces",
+            "Search-Based Planning",
+            "Sampling-Based Planning",
+            "Trajectory Planning",
+            "Task Planning",
+            "Planning under Uncertainty",
+            "Multi-Robot and Dynamic Planning",
+            "Plan Execution and Recovery",
+            "Planning in Practice"
+          ]
+        },
+        {
+          "number": 36,
+          "title": "Social Robotics",
+          "promise": "Design robots that behave appropriately around people over weeks, not minutes.",
+          "chapters": [
+            "Robots Among People",
+            "Social Norms and Cues",
+            "Appearance and Design",
+            "Nonverbal Behaviour",
+            "Conversation and Companionship",
+            "Robots in Care, Education and Service",
+            "Cultural Differences",
+            "Measuring Social Acceptance",
+            "Long-Term Interaction",
+            "Responsible Social Robotics"
+          ]
+        }
+      ]
+    },
+    {
+      "year": "Year 4",
+      "semester": "Semester 1",
+      "courses": [
+        {
+          "number": 37,
+          "title": "Evolutionary Robotics",
+          "promise": "Let algorithms design robot bodies and brains by survival of the fittest.",
+          "chapters": [
+            "Design by Evolution",
+            "Encoding a Robot",
+            "Fitness and Selection",
+            "Genetic Algorithms",
+            "Evolving Controllers",
+            "Evolving Bodies",
+            "Co-Evolution and Novelty",
+            "Simulation versus Reality",
+            "Analysing Evolved Solutions",
+            "Case Studies"
+          ]
+        },
+        {
+          "number": 38,
+          "title": "Robot Ethics",
+          "promise": "Decide what a robot may do, who is responsible, and how to prove it was right.",
+          "chapters": [
+            "Ethics for Machines That Act",
+            "Agency and Autonomy",
+            "Harm, Safety and Liability",
+            "Deception and Anthropomorphism",
+            "Privacy in Robotic Systems",
+            "Military and Policing Robots",
+            "Care, Health and Work",
+            "Consent and Human Dignity",
+            "Rules, Codes and Certification",
+            "Designing Ethical Robots"
+          ]
+        },
+        {
+          "number": 39,
+          "title": "Robot Learning",
+          "promise": "Make robots improve with experience, demonstration and their own data.",
+          "chapters": [
+            "Robots That Improve with Experience",
+            "Learning from Demonstration",
+            "Imitation Learning",
+            "Self-Supervised Robot Learning",
+            "Reinforcement Learning on Real Robots",
+            "Representing Skills",
+            "Simulation-to-Reality Transfer",
+            "Learning with Limited Data",
+            "Safety in Learning Systems",
+            "Evaluating Robot Learning"
+          ]
+        },
+        {
+          "number": 40,
+          "title": "AI Ethics",
+          "promise": "Judge AI systems fairly, explain them, and govern them inside real organisations.",
+          "chapters": [
+            "Why AI Ethics Matters Now",
+            "Values, Norms and Law",
+            "Fairness and Discrimination",
+            "Privacy and Surveillance",
+            "Transparency and Explainability",
+            "Accountability and Governance",
+            "Misuse, Manipulation and Deepfakes",
+            "Labour, Economy and Society",
+            "Global Perspectives and Regulation",
+            "Building Ethical AI Practice"
+          ]
+        },
+        {
+          "number": 41,
+          "title": "Robot Manipulation",
+          "promise": "Give a robot arm the ability to grasp, move and assemble real objects.",
+          "chapters": [
+            "Arms, Hands and Tasks",
+            "Grasping",
+            "Kinematics for Manipulation",
+            "Dynamics and Forces",
+            "Force and Tactile Sensing",
+            "Motion Planning for Arms",
+            "Grasp Planning and Grasp Learning",
+            "Assembly and Contact Tasks",
+            "Mobile Manipulation",
+            "Benchmarking Manipulation"
+          ]
+        },
+        {
+          "number": 42,
+          "title": "Robot Perception",
+          "promise": "Build perception that is accurate enough, fast enough and honest about uncertainty.",
+          "chapters": [
+            "Perception for Action",
+            "Multi-Sensor Fusion",
+            "3D Scene Understanding",
+            "Object Pose Estimation",
+            "Semantic and Instance Understanding",
+            "Tracking and Prediction",
+            "Active Perception",
+            "Perception for Human-Robot Interaction",
+            "Real-Time Constraints",
+            "Validating Perception Systems"
+          ]
+        }
+      ]
+    },
+    {
+      "year": "Year 4",
+      "semester": "Semester 2",
+      "courses": [
+        {
+          "number": 43,
+          "title": "Robot Navigation",
+          "promise": "Take a robot from a start point to a goal, safely, in a real and changing place.",
+          "chapters": [
+            "The Navigation Problem",
+            "Map Representations",
+            "Global Path Planning",
+            "Local Planning and Control",
+            "Obstacle Avoidance",
+            "Localisation for Navigation",
+            "Navigation in Dynamic Environments",
+            "Outdoor and Off-Road Navigation",
+            "Multi-Modal Navigation",
+            "Field Testing and Reliability"
+          ]
+        },
+        {
+          "number": 44,
+          "title": "Robot Path Planning",
+          "promise": "Compute good paths and smooth trajectories under real constraints.",
+          "chapters": [
+            "Paths, Routes and Trajectories",
+            "Graph Search Methods",
+            "Heuristic Search",
+            "Sampling-Based Planners",
+            "Optimisation-Based Planning",
+            "Kinodynamic Planning",
+            "Planning with Uncertainty and Risk",
+            "Smoothing and Trajectory Generation",
+            "Replanning and Recovery",
+            "Tools and Benchmarks"
+          ]
+        },
+        {
+          "number": 45,
+          "title": "Robot Simulation",
+          "promise": "Test robots in software before they touch metal, and transfer the results to reality.",
+          "chapters": [
+            "Why Simulate",
+            "Physics Engines",
+            "Building a Robot Model",
+            "Building a World",
+            "Sensors in Simulation",
+            "Simulating Contact and Friction",
+            "Simulation-to-Reality Transfer",
+            "Running Experiments at Scale",
+            "Validation and Metrics",
+            "Simulation in the Product Lifecycle"
+          ]
+        },
+        {
+          "number": 46,
+          "title": "Robot Vision",
+          "promise": "Make vision work on a moving, vibrating, sunlit robot in the real world.",
+          "chapters": [
+            "Vision on a Moving Robot",
+            "Camera Models and Calibration",
+            "Handling Motion and Blur",
+            "Stereo and Depth",
+            "Visual Odometry",
+            "Visual Simultaneous Localisation and Mapping",
+            "Onboard Object Detection",
+            "Vision for Manipulation and Navigation",
+            "Embedded Vision Implementation",
+            "Robustness and Field Testing"
+          ]
+        },
+        {
+          "number": 47,
+          "title": "Robot Design",
+          "promise": "Turn a need into a safe, buildable, affordable robot design.",
+          "chapters": [
+            "Design as a Process",
+            "Requirements and Constraints",
+            "Concept Generation",
+            "Mechanical Structure",
+            "Actuator and Transmission Selection",
+            "Electronics and Power",
+            "Software Architecture",
+            "Prototyping and Testing",
+            "Reliability, Safety and Cost",
+            "From Design to Delivered Robot"
+          ]
+        },
+        {
+          "number": 48,
+          "title": "Capstone Design Project",
+          "promise": "Plan, build, test and defend one complete AI and robotics project of your own.",
+          "chapters": [
+            "Choosing a Project",
+            "Defining Requirements",
+            "Literature and Prior Art",
+            "System Design",
+            "Building the Prototype",
+            "Testing and Iteration",
+            "Data, Logging and Evaluation",
+            "Writing the Report",
+            "Presenting and Demonstrating",
+            "From Project to Product or Research"
+          ]
+        }
+      ]
+    }
+  ]
+}
